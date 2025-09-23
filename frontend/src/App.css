@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f2f5;
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+nav button {
+  padding: 10px 20px;
+  border: 2px solid #3498db;
+  background: white;
+  color: #3498db;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+nav button:hover {
+  background: #3498db;
+  color: white;
+}
+
+nav button.active {
+  background: #3498db;
+  color: white;
+}
+
+.section {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.section h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.book-form, .borrow-form {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.book-form input, .book-form select, .borrow-form input, .borrow-form select {
+  padding: 10px;
+  border: 2px solid #e9ecef;
+  border-radius: 6px;
+  flex: 1;
+  min-width: 150px;
+  font-size: 14px;
+}
+
+.book-form input:focus, .book-form select:focus, .borrow-form input:focus, .borrow-form select:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.book-form button, .borrow-form button {
+  padding: 10px 20px;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.book-form button:hover, .borrow-form button:hover {
+  background: #229954;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.book-card {
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.book-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.book-card.available {
+  border-color: #27ae60;
+  background: #f8fff8;
+}
+
+.book-card.borrowed {
+  border-color: #e74c3c;
+  background: #fff8f8;
+}
+
+.book-card h3 {
+  color: #2c3e50;
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+.book-card p {
+  color: #7f8c8d;
+  margin-bottom: 10px;
+}
+
+.status {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status.available {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status.borrowed {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.book-actions {
+  margin-top: 15px;
+  display: flex;
+  gap: 8px;
+}
+
+.book-actions button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.book-actions button:first-child {
+  background: #3498db;
+  color: white;
+}
+
+.book-actions button.delete {
+  background: #e74c3c;
+  color: white;
+}
+
+.borrowers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.borrower-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff8f8;
+  border: 2px solid #e74c3c;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.borrower-info h3 {
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.borrower-info p {
+  color: #7f8c8d;
+  margin-bottom: 3px;
+  font-size: 14px;
+}
+
+.return-btn {
+  padding: 10px 20px;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.return-btn:hover {
+  background: #229954;
+}
+
+.returns-list {
+  margin-top: 20px;
+}
+
+.return-card {
+  background: #f8fff8;
+  border: 1px solid #27ae60;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.return-card p {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .App {
+    padding: 15px;
+  }
+  
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .book-form, .borrow-form {
+    flex-direction: column;
+  }
+  
+  .books-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .borrower-card {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
